@@ -1,7 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'line-bot-api'
-gem 'dotenv-rails', groups: [:development, :test]
+# Only for developemnt
+# gem 'dotenv-rails'
 gem 'json'
 gem 'sinatra'
 gem 'puma'
