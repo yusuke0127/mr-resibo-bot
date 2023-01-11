@@ -1,5 +1,6 @@
 require 'line/bot'
-require 'dotenv/load'
+# Comment out for development
+# require 'dotenv/load'
 
 class LineBot
 	BOT_NAME = /(mr\.?\s?resibo|resibo)/i
