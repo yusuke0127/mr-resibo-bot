@@ -26,13 +26,13 @@ class LineBot
 
 		return '' unless BOT_NAME.match?(message) || ACCEPTED_KEYWORDS.any? { |keyword| message.include?(keyword) }
 
-		if is_keyword_in_message(["hi", "hello"], message)
+		if is_keyword_in_message?(["hi", "hello"], message)
 			"Hello #{user_name}, kamusta na 2mb mong brains?"
-		elsif is_keyword_in_message(["sureball"], message)
+		elsif is_keyword_in_message?(["sureball"], message)
 			"Oh SUREBALL daw!"
-		elsif is_keyword_in_message(["sorry"], message)
+		elsif is_keyword_in_message?(["sorry"], message)
 			'Ganito lang talaga ako'
-		elsif is_keyword_in_message(["ganda"], message)
+		elsif is_keyword_in_message?(["ganda"], message)
 			['Ang GANDA! 😍', 'Talaga!'].sample
 		else
 			'Di ko gets masyadong pang low level.'
@@ -52,12 +52,8 @@ class LineBot
 		'OK'
 	end
 
-	def self.is_keyword_in_message(keywords, message)
-		keywords.each { |keyword|
-			has_matched = Regexp.new(KEYWORD_STR_REGEX % keyword).match?(message)
-			return true if has_matched
-		}
-		return false
+  def self.is_keyword_in_message?(keywords, message)
+		keywords.any? { |keyword| Regexp.new(KEYWORD_STR_REGEX % keyword).match?(message) }
 	end
 
 end
