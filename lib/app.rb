@@ -1,7 +1,8 @@
 # app.rb
 require 'sinatra/base'
-require './line_bot'
 require 'json'
+
+require_relative 'line_bot'
 
 class App < Sinatra::Base
   post '/callback' do
