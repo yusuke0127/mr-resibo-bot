@@ -4,13 +4,14 @@ require 'line/bot'
 
 class LineBot
 	BOT_NAME = /(mr\.?\s?resibo|resibo)/i
+	KEYWORD_STR_REGEX = "(^|\s|[^[a-zA-Z]])%s($|\s|[^[a-zA-Z]])"
 	ACCEPTED_KEYWORDS = [
 		'sureball',
 		'ganda',
 		'sorry',
 		'hi',
 		'hello'
-	]   
+	]
 
 	def self.client
 		@client ||= Line::Bot::Client.new { |config|
@@ -25,13 +26,13 @@ class LineBot
 
 		return '' unless BOT_NAME.match?(message) || ACCEPTED_KEYWORDS.any? { |keyword| message.include?(keyword) }
 
-		if message.include?('hello') || message.include?('hi')
+		if is_keyword_in_message(["hi", "hello"], message)
 			"Hello #{user_name}, kamusta na 2mb mong brains?"
-		elsif message.include?('sureball')
+		elsif is_keyword_in_message(["sureball"], message)
 			"Oh SUREBALL daw!"
-		elsif message.include?('sorry')
+		elsif is_keyword_in_message(["sorry"], message)
 			'Ganito lang talaga ako'
-		elsif message.include?('ganda')
+		elsif is_keyword_in_message(["ganda"], message)
 			['Ang GANDA! 😍', 'Talaga!'].sample
 		else
 			'Di ko gets masyadong pang low level.'
@@ -50,4 +51,13 @@ class LineBot
 		client.reply_message(event['replyToken'], message)
 		'OK'
 	end
+
+	def self.is_keyword_in_message(keywords, message)
+		keywords.each { |keyword|
+			has_matched = Regexp.new(KEYWORD_STR_REGEX % keyword).match?(message)
+			return true if has_matched
+		}
+		return false
+	end
+
 end
