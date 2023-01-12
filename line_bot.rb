@@ -6,13 +6,17 @@ class LineBot
 	BOT_NAME = /(mr\.?\s?resibo|resibo)/i
 	KEYWORD_STR_REGEX = "(^|\s|[^[a-zA-Z]])%s($|\s|[^[a-zA-Z]])"
   ACCEPTED_KEYWORDS = {
-    'sureball': ['Oh SUREBALL daw!', 'Gawin mo na lang', 'Pakalbo ka muna', 'Tokis pa more'],
+    'sureball': ['Oh SUREBALL daw!', 'Gawin mo na lang!', 'Pakalbo ka muna!', 'Tokis pa more!'],
     'ganda': ['Talaga!', 'Ang GANDA! 😍'],
     'martin': ['Son of G!', 'POGI!', 'Anak ni Mrs. Galang'],
+    'barber': ['KRISTIAN NOEL PATRICIO!'],
     'barbers': ['KRISTIAN NOEL PATRICIO!'],
-    'hi': ['Hello, kamusta na 2mb mong brains?'],
-    'hello': ['Hello, kamusta na 2mb mong brains?'],
-    'pogi': ['eguls']
+    'hi': ['Hello! kamusta na 2mb mong brains?'],
+    'hello': ['Hello! kamusta na 2mb mong brains?'],
+    'pogi': ['Eguls'],
+    'kalbo': ['Kririn!'],
+    'tropa': ['Sino tropa nun?', 'Tropa ba talaga?'],
+    'focus': ['Focus talaga!','Focus sa goals!', 'Focus sa faith!']
   }
 
 	def self.client
@@ -32,9 +36,9 @@ class LineBot
 
     if keyword
 			ACCEPTED_KEYWORDS[keyword].sample
-		else
-			'Di ko gets masyadong pang low level.'
-		end
+    end
+
+		'Di ko gets masyadong pang low level.'
 	end
 
 	def self.send_bot_message(message, client, event)
