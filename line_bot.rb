@@ -36,9 +36,9 @@ class LineBot
 
     if keyword
 			ACCEPTED_KEYWORDS[keyword].sample
+    else
+		  'Di ko gets masyadong pang low level.'
     end
-
-		'Di ko gets masyadong pang low level.'
 	end
 
 	def self.send_bot_message(message, client, event)
