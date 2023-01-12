@@ -5,13 +5,15 @@ require 'line/bot'
 class LineBot
 	BOT_NAME = /(mr\.?\s?resibo|resibo)/i
 	KEYWORD_STR_REGEX = "(^|\s|[^[a-zA-Z]])%s($|\s|[^[a-zA-Z]])"
-	ACCEPTED_KEYWORDS = [
-		'sureball',
-		'ganda',
-		'sorry',
-		'hi',
-		'hello'
-	]
+  ACCEPTED_KEYWORDS = {
+    'sureball': ['Oh SUREBALL daw!', 'Gawin mo na lang', 'Pakalbo ka muna', 'Tokis pa more'],
+    'ganda': ['Talaga!', 'Ang GANDA! 😍'],
+    'martin': ['Son of G!', 'POGI!', 'Anak ni Mrs. Galang'],
+    'barbers': ['KRISTIAN NOEL PATRICIO!'],
+    'hi': ['Hello, kamusta na 2mb mong brains?'],
+    'hello': ['Hello, kamusta na 2mb mong brains?'],
+    'pogi': ['eguls']
+  }
 
 	def self.client
 		@client ||= Line::Bot::Client.new { |config|
@@ -21,19 +23,15 @@ class LineBot
 		}
 	end
 
-	def self.bot_reply_to(message, user_name)
+	def self.bot_reply_to(message)
 		message = message.downcase
 
-		return '' unless BOT_NAME.match?(message) || ACCEPTED_KEYWORDS.any? { |keyword| message.include?(keyword) }
+    return '' unless BOT_NAME.match?(message) || is_keyword_in_message?(ACCEPTED_KEYWORDS.keys, message)
 
-		if is_keyword_in_message?(["hi", "hello"], message)
-			"Hello #{user_name}, kamusta na 2mb mong brains?"
-		elsif is_keyword_in_message?(["sureball"], message)
-			"Oh SUREBALL daw!"
-		elsif is_keyword_in_message?(["sorry"], message)
-			'Ganito lang talaga ako'
-		elsif is_keyword_in_message?(["ganda"], message)
-			['Ang GANDA! 😍', 'Talaga!'].sample
+    keyword = get_keyword(ACCEPTED_KEYWORDS.keys, message)
+
+    if keyword
+			ACCEPTED_KEYWORDS[keyword].sample
 		else
 			'Di ko gets masyadong pang low level.'
 		end
@@ -55,5 +53,9 @@ class LineBot
   def self.is_keyword_in_message?(keywords, message)
 		keywords.any? { |keyword| Regexp.new(KEYWORD_STR_REGEX % keyword).match?(message) }
 	end
+
+  def self.get_keyword(keywords, message)
+    keywords.find { |keyword| Regexp.new(KEYWORD_STR_REGEX % keyword).match?(message) }
+  end
 
 end
