@@ -17,7 +17,7 @@ class LineBot
     'kalbo': ['Kririn!'],
     'tropa': ['Sino tropa nun?', 'Tropa ba talaga?'],
     'focus': ['Focus talaga!','Focus sa goals!', 'Focus sa faith!'],
-    'guys': ['Oh ano kantoterorrist?', 'The bomb has been planted!', 'Ingat may terrorista!'],
+    'guys': ['The bomb has been planted!', 'Ingat may terrorista!'],
     'ベル': ['Ayan ba yung malibog pa sa daga?', 'Kririn!', 'Hi! Kuya Jobs!'],
     'bye': ['Hug mo ko!'],
     'hug': ['Ang clingy!'],
