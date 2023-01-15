@@ -7,16 +7,27 @@ class LineBot
 	KEYWORD_STR_REGEX = "(^|\s|[^[a-zA-Z]])%s($|\s|[^[a-zA-Z]])"
   ACCEPTED_KEYWORDS = {
     'sureball': ['Oh SUREBALL daw!', 'Gawin mo na lang!', 'Pakalbo ka muna!', 'Tokis pa more!'],
-    'ganda': ['Talaga!', 'Ang GANDA! 😍'],
+    'ganda': ['Talaga!', 'Ang GANDA! 😍', 'Ii tenki da ne'],
     'martin': ['Son of G!', 'POGI!', 'Anak ni Mrs. Galang'],
     'barber': ['KRISTIAN NOEL PATRICIO!'],
     'barbers': ['KRISTIAN NOEL PATRICIO!'],
     'hi': ['Hello! kamusta na 2mb mong brains?'],
     'hello': ['Hello! kamusta na 2mb mong brains?'],
-    'pogi': ['Eguls'],
+    'pogi': ['Eguls', 'Tawag ka Martin'],
     'kalbo': ['Kririn!'],
     'tropa': ['Sino tropa nun?', 'Tropa ba talaga?'],
-    'focus': ['Focus talaga!','Focus sa goals!', 'Focus sa faith!']
+    'focus': ['Focus talaga!','Focus sa goals!', 'Focus sa faith!'],
+    'guys': ['Oh ano kantoterorrist?', 'The bomb has been planted!', 'Ingat may terrorista!'],
+    'ベル': ['Ayan ba yung malibog pa sa daga?', 'Kririn!', 'Hi! Kuya Jobs!'],
+    'bye': ['Hug mo ko!'],
+    'hug': ['Ang clingy!'],
+    'alta': ['Akala ko ba prangka ka?'],
+    'mamu': ["I've come to bargain!"],
+    'sakit': ['Gets ko nararamdaman mo'],
+    'yarn': ['Nu ba yarn'],
+    'ロイ': ['Nabuhay!', 'Gets ko nararamdaman mo'],
+    'titration': ['Bastos mo naman mamsir', 'Ano tagalog niyan?'],
+    'rumaragasa': ['Ano pinagsasabi mo?']
   }
 
 	def self.client
