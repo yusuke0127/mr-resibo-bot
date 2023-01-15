@@ -20,14 +20,18 @@ class LineBot
     'guys': ['The bomb has been planted!', 'Ingat may terrorista!'],
     'ベル': ['Ayan ba yung malibog pa sa daga?', 'Kririn!', 'Hi! Kuya Jobs!'],
     'bye': ['Hug mo ko!'],
-    'hug': ['Ang clingy!'],
+    'hug': ['Ano ba yan ang clingy!'],
     'alta': ['Akala ko ba prangka ka?'],
     'mamu': ["I've come to bargain!"],
     'sakit': ['Gets ko nararamdaman mo'],
     'yarn': ['Nu ba yarn'],
     'ロイ': ['Nabuhay!', 'Gets ko nararamdaman mo'],
     'titration': ['Bastos mo naman mamsir', 'Ano tagalog niyan?'],
-    'rumaragasa': ['Ano pinagsasabi mo?']
+    'rumaragasa': ['Ano pinagsasabi mo?'],
+    'clingy': ['Clingy talaga yan si KRISTIAN NOEL PATRICIO', 'Bat ang clingy mo KRISTIAN NOEL PATRICIO?!'],
+    'ian': ['Nasan na ang terrorista?', 'TERRORISTA!'],
+    'harmony': ['Reunion ng Friends with Harmony?'],
+    'loverboy': ['Tawag ka Renz']
   }
 
 	def self.client
