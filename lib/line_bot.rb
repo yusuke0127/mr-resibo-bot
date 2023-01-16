@@ -7,7 +7,7 @@ class LineBot
 	KEYWORD_STR_REGEX = "(^|\s|[^[a-zA-Z]])%s($|\s|[^[a-zA-Z]])"
   ACCEPTED_KEYWORDS = {
     'sureball': ['Oh SUREBALL daw!', 'Gawin mo na lang!', 'Pakalbo ka muna!', 'Tokis pa more!'],
-    'tokis': ['Tokis talaga yan si Peps!', 'Tawag ka KRISTIAN NOEL PATRICIO!']
+    'tokis': ['Tokis talaga yan si Peps!', 'Tawag ka KRISTIAN NOEL PATRICIO!'],
     'ganda': ['Talaga!', 'Ang GANDA! 😍', 'Ii tenki da ne'],
     'martin': ['Son of G!', 'POGI!', 'Anak ni Mrs. Galang'],
     'barber': ['KRISTIAN NOEL PATRICIO!', 'Tawag ka KRISTIAN NOEL PATRICIO!'],
