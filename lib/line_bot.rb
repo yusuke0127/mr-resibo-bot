@@ -8,7 +8,7 @@ class LineBot
   ACCEPTED_KEYWORDS = {
     'sureball': ['Oh SUREBALL daw!', 'Gawin mo na lang!', 'Pakalbo ka muna!', 'Tokis pa more!'],
     'tokis': ['Tokis talaga yan si Peps!', 'Tawag ka KRISTIAN NOEL PATRICIO!'],
-    'prince': ['Prince Tokis!', 'Prince Manyak!', 'Prince Sureball!']
+    'prince': ['Prince Tokis!', 'Prince Manyak!', 'Prince Sureball!'],
     'ganda': ['Talaga!', 'Ang GANDA! 😍', 'Ii tenki da ne'],
     'martin': ['Son of G!', 'POGI!', 'Anak ni Mrs. Galang'],
     'barber': ['KRISTIAN NOEL PATRICIO!', 'Tawag ka KRISTIAN NOEL PATRICIO!', 'Pagupit nga KRISTIAN NOEL PATRICIO!'],
