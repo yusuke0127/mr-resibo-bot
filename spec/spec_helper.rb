@@ -1,10 +1,11 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'rack/test'
 require 'rspec'
 require 'pry'
 
 require File.expand_path "../../lib/app", __FILE__
 
-ENV['RACK_ENV'] = 'test'
 
 module RSpecMixin
   include Rack::Test::Methods
@@ -14,4 +15,4 @@ module RSpecMixin
   end
 end
 
-RSpec.configure { |c| c.include RSpecMixin } 
+RSpec.configure { |c| c.include RSpecMixin }
