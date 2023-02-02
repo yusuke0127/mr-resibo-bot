@@ -1,5 +1,5 @@
 # Mr Resibo
-Basic Line Bot that responds to specific keywords. Using Sinatra, Heroku and the Line Messaging API.
+Basic Line Bot that responds to specific keywords. Using Sinatra as the Web Framework, Heroku and the Line Messaging API.
 
 ### Initial Setup
 Install dependencies using Bundler
