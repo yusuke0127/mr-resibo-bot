@@ -6,3 +6,8 @@ gem 'line-bot-api'
 gem 'json'
 gem 'sinatra'
 gem 'puma'
+
+group :test do
+  gem 'rspec'
+  gem 'rack-test'
+end

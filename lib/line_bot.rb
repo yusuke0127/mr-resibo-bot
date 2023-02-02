@@ -1,5 +1,5 @@
 require 'line/bot'
-# Comment out for development
+# Remove comment for development
 # require 'dotenv/load'
 
 class LineBot
@@ -14,8 +14,8 @@ class LineBot
     'barber': ['KRISTIAN NOEL PATRICIO!', 'Tawag ka KRISTIAN NOEL PATRICIO!', 'Pagupit nga KRISTIAN NOEL PATRICIO!'],
     'barbero': ['KRISTIAN NOEL PATRICIO!', 'Tawag ka KRISTIAN NOEL PATRICIO!', 'Pagupit nga KRISTIAN NOEL PATRICIO!'],
     'barbers': ['KRISTIAN NOEL PATRICIO!', 'Tawag ka KRISTIAN NOEL PATRICIO!', 'Pagupit nga KRISTIAN NOEL PATRICIO!'],
-    'hi': ['Hello! kamusta na 2mb mong brains?'],
-    'hello': ['Hello! kamusta na 2mb mong brains?'],
+    'hi': ['Hello! Kamusta na 2mb mong brains?'],
+    'hello': ['Hello! Kamusta na 2mb mong brains?'],
     'pogi': ['Eguls', 'Tawag ka Martin', 'Tawag ka Renz'],
     'kalbo': ['Kririn!'],
     'tropa': ['Sino tropa nun?', 'Tropa ba talaga?'],
@@ -66,21 +66,11 @@ class LineBot
 
     keyword = get_keyword(ACCEPTED_KEYWORDS.keys, message)
 
-    if keyword
-			ACCEPTED_KEYWORDS[keyword].sample
-    else
-		  'Di ko gets masyadong pang low level.'
-    end
+    generate_reply(keyword)
 	end
 
 	def self.send_bot_message(message, client, event)
-		# Log prints for debugging
-		p 'Bot message sent!'
-		p event['replyToken']
-		p client
-
 		message = { type: 'text', text: message }
-		p message
 
 		client.reply_message(event['replyToken'], message)
 		'OK'
@@ -94,4 +84,7 @@ class LineBot
     keywords.find { |keyword| Regexp.new(KEYWORD_STR_REGEX % keyword).match?(message) }
   end
 
+  def self.generate_reply(keyword)
+    keyword ? ACCEPTED_KEYWORDS[keyword].sample : 'Di ko gets masyadong pang low level.'
+  end
 end
